@@ -5,6 +5,11 @@ import SearchBar from './Components/SearchBar';
 
 class App extends React.Component {
   state = {images: []}
+
+  componentDidMount(){
+    this.onSubmitForm("cars");
+  }
+
   onSubmitForm = async (term) => {
     const response = await unsplash.get('/search/photos',{
       params:{
